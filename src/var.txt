@@ -1,0 +1,12 @@
+red1 = #ff4b1f
+red2 = #ff9068
+
+brown
+background-image: linear-gradient(to right, #ffecd2 0%, #fcb69f 100%);
+
+
+blue-white
+background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+
+brown-white
+background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
