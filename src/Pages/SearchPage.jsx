@@ -18,10 +18,10 @@ const SearchPage = () => {
     const getRecipe = async() =>{
 
 
-        const response = await axios.get(`https://api.spoonacular.com/recipes/search`, {
+        const response = await axios.get(`https://api.spoonacular.com/recipes/complexSearch`, {
           params: {
             query: params,
-            number: 10, // Number of results to fetch (adjust as needed)
+            number: 20, // Number of results to fetch (adjust as needed)
             apiKey: '621cc4ee01e34c76975ae0e57c95a0a5',
           },
         });
@@ -46,11 +46,11 @@ const SearchPage = () => {
     
   return (
     <>
-    <div className='flex flex-wrap'>
+    <div className='grid-container'>
         {
             state.map((x)=> {
               return (
-                <div className='relative w-[200px] h-[200px] rounded-md ' >
+                <div className='relative w-[100%] h-[100%] rounded-md cursor-pointer' key={x.id} >
                     <img src={x.image} alt="" className='h-[100%] w-[100%] rounded-md object-cover'/>
                     
                     <p className='absolute z-10 arrange'>{trunc(x.title)}</p>

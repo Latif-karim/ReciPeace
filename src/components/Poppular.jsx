@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 // Default theme
 import '@splidejs/react-splide/css';
 import '../index.css'
+import { useDetailContext } from './DetailContext';
 
 
 
@@ -16,7 +17,7 @@ import '../index.css'
 const Poppular= () => {
   const [recipe, setRecipe] = useState([]);
   const apiKey =  import.meta.env.VITE_API_URL
-  const navigate = useNavigate()
+  const { handleDetail } = useDetailContext()
 
   
   
@@ -48,9 +49,6 @@ const Poppular= () => {
     
   }, []);
 
-  const handleDetail = (id) => {
-    navigate('detail/' + id)
-  }
 
   
   return (

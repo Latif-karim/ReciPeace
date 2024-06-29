@@ -2,12 +2,13 @@ import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../index.css'
+import { useDetailContext } from '../components/DetailContext';
 
 const American = () => {
 
     const [recipe, setRecipe] = useState([]);
     const apiKey =  import.meta.env.VITE_API_URL
-
+    const { handleDetail } = useDetailContext()
     const getRecipe = async() =>{
     
 
@@ -41,7 +42,7 @@ const American = () => {
     <div className='grid-container'>{
         recipe.map((e) => {
             return (
-                <div className='relative w-[200px] h-[200px] rounded-md cursor-pointer' >
+                <div className='relative w-[100%] h-[100%] rounded-md cursor-pointer' key={e.id} onClick={()=> handleDetail(e.id)} >
                     <img src={e.image} alt="" className='h-[100%] w-[100%] rounded-md object-cover'/>
                     
                     <p className='absolute z-10 arrange'>{trunc(e.title)}</p>
