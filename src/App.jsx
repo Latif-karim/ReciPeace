@@ -13,7 +13,7 @@ function App() {
  
   return (
     <>
-    <div className=' px-[150px]  py-[50px] h-screen overflow-auto'>
+    <div className=' px-[150px]  py-[50px] h-screen overflow-auto brown'>
     <Logo />
     <Search />
     <Nav />

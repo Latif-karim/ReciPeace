@@ -34,7 +34,7 @@ const Details = () => {
         <div className='col-span-2'>
           <p className='mb-[7px]'>{detail.title}</p>
           <div className='relative'>
-          <img src={detail.image} alt="" className='rounded-sm'/>
+          <img src={detail.image} alt="" className='rounded-sm object-cover w-[100%] h-[100%]'/>
           <div className='absolute top-[0px] dark left-0 z-20'></div>
           </div>
           
@@ -46,7 +46,7 @@ const Details = () => {
 
           </div>
           <div dangerouslySetInnerHTML={{ __html: detail.summary }} className='mb-[40px]'/>
-          <div dangerouslySetInnerHTML={{ __html: detail.instructions }}/>
+          <div dangerouslySetInnerHTML={{ __html: detail.instructions }} className='text-gray-700'/>
         </div>
       </div>
       

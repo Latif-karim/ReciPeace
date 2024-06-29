@@ -16,7 +16,7 @@ import { useDetailContext } from './DetailContext';
 const Veggie = () => {
   const [recipe, setRecipe] = useState([]);
   const apiKey =  import.meta.env.VITE_API_URL
-  const { handleDetail } = useDetailContext
+  const { handleDetail } = useDetailContext()
 
   
   
@@ -47,6 +47,13 @@ const Veggie = () => {
     
     
   }, []);
+  const trunc = (str) => {
+    if (str.length > 15) {
+        return str.slice(0, 15) + '...';
+    } else {
+        return str;
+    }
+}
 
   
   return (
@@ -67,7 +74,7 @@ const Veggie = () => {
       return (
         <SplideSlide key={x.id} >
       <div className='min-h-[14rem] rounded-[15px] overflow-hidden relative cursor-pointer' onClick={()=> handleDetail(x.id)}>
-        <p className='absolute z-10 arrange'>{x.title}</p>
+        <p className='absolute z-10 arrange'>{trunc(x.title)}</p>
         <img src={x.image} alt="" className='rounded-[15px] absolute top-[0px] w-[100%] h-[100%] object-cover'/>
         <div className='absolute z-5 dark top-[0px] w-[100%] h-[100%]'></div>
       </div>
